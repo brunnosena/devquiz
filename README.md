@@ -36,7 +36,7 @@ $ flutter pub get
 $ flutter doctor
 
 # Start the project
-$ Open project in VSCode and Press F5 
+Open project in VSCode and Press F5 
 ```
 
 <hr/>
@@ -45,5 +45,5 @@ $ Open project in VSCode and Press F5
   <h1>Open Source</h1>
   <sub>Copyright © 2021-present, brunnosena.</sub>
   <p>devquiz <a href="https://github.com/brunnosena/devquiz/tree/dev/LICENSE">is MIT licensed 💖</a></p>
-  <img src=".github/favicon.png" width="48" />
+  <img src=".github/favicon.png" width="36" />
 </div>
