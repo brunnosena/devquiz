@@ -1,59 +1,59 @@
-import 'package:DevQuiz/core/app_colors.dart';
-import 'package:DevQuiz/core/app_images.dart';
-import 'package:DevQuiz/core/app_text_styles.dart';
+import 'package:DevQuiz/core/core.dart';
 import 'package:DevQuiz/shared/widgets/progress_indicator/progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class QuizCardWidget extends StatelessWidget {
+  final String title;
+  final String questionsAnswered;
+  final double percent;
+
+  const QuizCardWidget({
+    Key? key,
+    required this.title,
+    required this.questionsAnswered,
+    required this.percent,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            color: AppColors.white,
-            border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
-            borderRadius: BorderRadius.circular(10)),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      padding: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: 40,
+            width: 40,
+            child: Image.asset(AppImages.blocks),
+          ),
+          SizedBox(height: 20),
+          Text(
+            this.title,
+            style: AppTextStyles.heading15,
+          ),
+          SizedBox(height: 20),
+          Row(
             children: [
-              Row(
-                children: [
-                  Container(
-                      width: 40,
-                      height: 40,
-                      child: Image.asset(AppImages.blocks)),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Row(
-                  children: [
-                    Flexible(
-                      child: Text(
-                        "Gerenciamento de Estado",
-                        style: AppTextStyles.body15,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                      ),
-                    ),
-                  ],
+              Expanded(
+                flex: 5,
+                child: Text(
+                  this.questionsAnswered,
+                  style: AppTextStyles.body11,
                 ),
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 60,
-                    child: Text(
-                      "3 de 10",
-                      style: AppTextStyles.body11,
-                    ),
-                  ),
-                  Expanded(child: ProgressIndicatorWidget(value: 0.3))
-                ],
-              )
+              Expanded(
+                flex: 7,
+                child: ProgressIndicatorWidget(value: this.percent),
+              ),
             ],
           ),
-        ));
+        ],
+      ),
+    );
   }
 }

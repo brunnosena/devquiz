@@ -3,29 +3,29 @@ import 'package:DevQuiz/shared/widgets/progress_indicator/progress_indicator.dar
 import 'package:flutter/material.dart';
 
 class QuestionIndicatorWidget extends StatelessWidget {
+  const QuestionIndicatorWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Questão 04",
-                  style: AppTextStyles.body15,
-                ),
-                Text("de 10"),
-              ],
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            ProgressIndicatorWidget(value: 0.3)
-          ],
-        ),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Questão 04",
+                style: AppTextStyles.body,
+              ),
+              Text(
+                "de 10",
+                style: AppTextStyles.body,
+              ),
+            ],
+          ),
+          SizedBox(height: 16),
+          ProgressIndicatorWidget(value: 0.4),
+        ],
       ),
     );
   }

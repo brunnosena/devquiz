@@ -9,33 +9,35 @@ class QuizWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
-      children: [
-        Text(title, style: AppTextStyles.heading),
-        SizedBox(
-          height: 24,
-        ),
-        Expanded(
-          child: ListView(scrollDirection: Axis.vertical, children: [
-            AnswerWidget(
-              title: "Kit de desenvolvimento de interface de usuário",
-            ),
-            AnswerWidget(
-              title: "Kit de desenvolvimento de interface de usuário",
-              isRight: true,
-              isSelected: true,
-            ),
-            AnswerWidget(
-              title: "Kit de desenvolvimento de interface de usuário",
-              isRight: false,
-              isSelected: true,
-            ),
-            AnswerWidget(
-              title: "Kit de desenvolvimento de interface de usuário",
-            )
-          ]),
-        ),
-      ],
-    ));
+      child: Column(
+        children: [
+          Text(
+            title,
+            style: AppTextStyles.heading,
+          ),
+          SizedBox(height: 24),
+          AnswerWidget(
+            isRight: true,
+            isSelected: true,
+            title:
+                "Possibilita a criação de aplicativos compilados nativamente.",
+          ),
+          AnswerWidget(
+            isRight: false,
+            isSelected: true,
+            title:
+                "Possibilita a criação de aplicativos compilados nativamente.",
+          ),
+          AnswerWidget(
+            title:
+                "Possibilita a criação de aplicativos compilados nativamente.",
+          ),
+          AnswerWidget(
+            title:
+                "Possibilita a criação de aplicativos compilados nativamente.",
+          ),
+        ],
+      ),
+    );
   }
 }
